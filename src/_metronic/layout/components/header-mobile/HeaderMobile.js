@@ -32,7 +32,7 @@ export function HeaderMobile() {
           <img
             alt="Logo"
             className="logo-default max-h-30px"
-            src={toAbsoluteUrl("/media/logos/logo-letter-1.png")}
+            src={toAbsoluteUrl("/media/logos/header-logo.png")}
           />
         </Link>
         {/* end::Logo */}
@@ -41,8 +41,8 @@ export function HeaderMobile() {
         <div className="d-flex align-items-center">
           {layoutProps.asideDisplay && (
             <button
-              className="btn p-0 burger-icon burger-icon-left"
-              id="kt_aside_mobile_toggle"
+              className="btn p-0 burger-icon burger-icon-left ml-4"
+              id="kt_header_mobile_toggle"
             >
               <span />
             </button>
@@ -57,14 +57,14 @@ export function HeaderMobile() {
             </button>
           )}
 
-          <button
+          {/* <button
             className="btn btn-icon btn-hover-transparent-white p-0 ml-3"
             id="kt_header_mobile_topbar_toggle"
           >
             <span className="svg-icon svg-icon-xl">
               <SVG src={toAbsoluteUrl("/media/svg/icons/General/User.svg")} />
             </span>
-          </button>
+          </button> */}
         </div>
         {/* end::Toolbar */}
       </div>

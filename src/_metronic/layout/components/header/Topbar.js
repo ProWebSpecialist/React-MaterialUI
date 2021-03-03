@@ -53,11 +53,11 @@ export function Topbar() {
 
   return (
     <div className="topbar">
-      {layoutProps.viewSearchDisplay && <SearchDropdown />}
+      {/* {layoutProps.viewSearchDisplay && <SearchDropdown />} */}
 
       <div className="topbar-item">
         <div
-          className="d-flex align-items-center w-md-auto mr-4"
+          className="d-flex align-items-center w-md-auto mr-4 login-btn"
         >
           {!isAuthorized ? (
                 /*Render auth page when user at `/auth` and not authorized.*/

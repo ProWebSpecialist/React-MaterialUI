@@ -101,14 +101,16 @@ export function DashboardPage() {
     <div id="bubMid"></div>
     <div className="header-container mt-12 mx-16">
       <div className="button-container">
-        <Button
-          variant="contained"
-          size="small"
-          className="light-blue-bg font-bold px-8 py-3 text-sm tc-white br-20"
-        >
-          <FaShoppingBasket className="icon-addon mr-4" />
-          Shop
-        </Button>
+        <a href="/shop">
+          <Button
+            variant="contained"
+            size="small"
+            className="light-blue-bg font-bold px-8 py-3 text-sm tc-white br-20"
+          >
+            <FaShoppingBasket className="icon-addon mr-4" />
+            Shop
+          </Button>
+        </a>
       </div>
       <div className="button-container">
         {

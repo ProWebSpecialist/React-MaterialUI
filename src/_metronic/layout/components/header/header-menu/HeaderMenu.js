@@ -1,11 +1,20 @@
 /* eslint-disable no-script-url,jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useLocation } from "react-router";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import SVG from "react-inlinesvg";
 import { toAbsoluteUrl, checkIsActive } from "../../../../_helpers";
+import { shallowEqual, useSelector } from "react-redux";
+
 
 export function HeaderMenu({ layoutProps }) {
+    const {isAuthorized} = useSelector(
+        ({auth}) => ({
+            isAuthorized: auth.user != null,
+        }),
+        shallowEqual
+      );
+
     const location = useLocation();
     const getMenuItemActive = (url) => {
         return checkIsActive(location, url) ? "menu-item-active" : "";
@@ -19,43 +28,60 @@ export function HeaderMenu({ layoutProps }) {
         {/*begin::Header Nav*/}
         <ul className={`menu-nav ${layoutProps.ulClasses}`}>
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/home')}`}>
-                <NavLink className="menu-link" to="/home">
-                    <span className="menu-text">HOME</span>
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop')}`}>
+                <NavLink className="menu-link" to="/shop">
+                    <span className="menu-text">All</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/forums')}`}>
-                <NavLink className="menu-link" to="/forums">
-                    <span className="menu-text">FORUMS</span>
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/services')}`}>
+                <NavLink className="menu-link" to="/shop/services">
+                    <span className="menu-text">Custom</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/marketplace')}`}>
-                <NavLink className="menu-link" to="/marketplace">
-                    <span className="menu-text">MARKETPLACE</span>
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/premade')}`}>
+                <NavLink className="menu-link" to="/shop/premade">
+                    <span className="menu-text">Premade</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/wiki')}`}>
-                <NavLink className="menu-link" to="/wiki">
-                    <span className="menu-text">WIKI</span>
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/addons')}`}>
+                <NavLink className="menu-link" to="/shop/addons">
+                    <span className="menu-text">Addons</span>
+                    <span className="nav-addon">New</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
+
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/contact')}`}>
-                <NavLink className="menu-link" to="/contact">
-                    <span className="menu-text">CONTACT</span>
-                    {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
-                </NavLink>
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/addons')}`}>
+                <NavLink className="menu-link" to="/auth/login">
+                    {!isAuthorized ? (
+                            /*Render auth page when user at `/auth` and not authorized.*/
+                            <button
+                            type="button"
+                            className="btn btn-transparent-white font-weight-bold"
+                        >
+                            LOGIN
+                        </button>    
+                    ) : (
+                            /*Otherwise redirect to root page (`/`)*/
+                        <Link
+                        to="/logout"
+                        className="btn btn-transparent-white font-weight-bold"
+                        >
+                        LOG OUT
+                        </Link>
+                    )} 
+                </NavLink>   
             </li>
             {/*end::1 Level*/}
         </ul>

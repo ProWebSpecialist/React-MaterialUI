@@ -34,19 +34,19 @@ export function Header() {
           className={` ${layoutProps.headerContainerClasses} d-flex align-items-stretch justify-content-between`}
         >
           {/* begin::Left */}
-          <div className="d-flex align-items-stretch mr-3">
+          <div className="d-flex align-items-stretch mr-3 w-100 justify-content-between">
             {/* begin::Header Logo */}
             <div className="header-logo">
               <Link to="/">
                 <img
                   className="logo-default max-h-60px"
                   alt="Logo"
-                  src={toAbsoluteUrl("/media/logos/logo_top.png")}
+                  src={toAbsoluteUrl("/media/logos/header-logo.png")}
                 />
                 <img
                   className="logo-sticky max-h-60px"
                   alt="Logo"
-                  src={toAbsoluteUrl("/media/logos/logo.png")}
+                  src={toAbsoluteUrl("/media/logos/header-logo.png")}
                 />
               </Link>
             </div>
@@ -56,7 +56,7 @@ export function Header() {
           {/* end::Left */}
 
           {/*begin::Topbar*/}
-          <Topbar />
+          {/* <Topbar /> */}
           {/*end::Topbar*/}
         </div>
         {/*end::Container*/}

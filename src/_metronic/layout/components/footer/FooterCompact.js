@@ -1,5 +1,5 @@
 import React from "react";
-
+import {FaTwitter, FaDiscord, FaSkype} from "react-icons/fa"; 
 export function FooterCompact({
   today,
   footerClasses,
@@ -9,23 +9,23 @@ export function FooterCompact({
     <>
       {/* begin::Footer */}
       <div
-        className={`footer bg-white py-4 d-flex flex-lg-column  ${footerClasses}`}
+        className={`footer bg-white py-8 d-flex flex-lg-column  ${footerClasses}`}
         id="kt_footer"
       >
         {/* begin::Container */}
         <div
-          className={`${footerContainerClasses} d-flex flex-column flex-md-row align-items-center justify-content-center`}
+          className={`${footerContainerClasses} d-flex flex-column flex-md-row align-items-center justify-content-between`}
         >
           {/* begin::Copyright */}
-          <div className="text-dark order-2 order-md-1">
-            <a  
+          <div className="text-dark">
+            {/* <a  
               href="#"
               rel="noopener noreferrer"
               target="_blank"
               className="text-dark-75 text-hover-primary"
             >
-              OnexusForums
-            </a>
+              
+            </a> */}
             <span className="text-muted font-weight-bold mr-2 ml-2">
               &copy;
             </span>
@@ -36,13 +36,44 @@ export function FooterCompact({
               target="_blank"
               className="text-dark-75 text-hover-primary"
             >
-              All Rights Reserved
+               Copyright Benj 2020. All Rights Reserved.
             </a>
           </div>
           {/* end::Copyright */}
           {` `}
           {/* begin::Nav */}
-          
+          <div className="text-dark d-flex align-items-center justify-content-end social-medias">
+            <div className="social-media-link">
+              <a
+                href="#"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-dark-75 text-hover-primary"
+              >
+              <FaTwitter /> 
+              </a>
+            </div>
+            <div className="social-media-link">
+              <a
+                href="#"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-dark-75 text-hover-primary"
+              >
+              <FaDiscord /> 
+              </a>
+            </div>
+            <div className="social-media-link">
+              <a
+                href="#"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-dark-75 text-hover-primary"
+              >
+              <FaSkype /> 
+              </a>
+            </div>
+          </div>
           {/* end::Nav */}
         </div>
         {/* end::Container */}
