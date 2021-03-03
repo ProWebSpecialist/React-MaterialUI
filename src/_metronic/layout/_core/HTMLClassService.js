@@ -99,7 +99,7 @@ export class HtmlClassService {
   initLayout() {
     const selfBodyBackgroundImage = objectPath.get(this.config, "self.body.backgroundImage");
     if (selfBodyBackgroundImage) {
-      const backgroundImageUrl = `${toAbsoluteUrl("/media/" + selfBodyBackgroundImage)}`;
+      const backgroundImageUrl = `${toAbsoluteUrl("/media/bg/bg-dashboard.png")}`;
       document.body.style.backgroundImage = `url("${backgroundImageUrl}")`;
     }
 
@@ -110,9 +110,9 @@ export class HtmlClassService {
     }
 
     // Offcanvas directions
-    document.body.classList.add("quick-panel-right");
-    document.body.classList.add("demo-panel-right");
-    document.body.classList.add("offcanvas-right");
+    // document.body.classList.add("quick-panel-right");
+    // document.body.classList.add("demo-panel-right");
+    // document.body.classList.add("offcanvas-right");
   }
 
   /**
@@ -126,12 +126,12 @@ export class HtmlClassService {
   initHeader() {
     // Fixed header
     const headerSelfFixedDesktop = objectPath.get(this.config, "header.self.fixed.desktop");
-    if (headerSelfFixedDesktop) {
-      document.body.classList.add("header-fixed");
-      objectPath.push(this.classes, "header", "header-fixed");
-    } else {
-      document.body.classList.add("header-static");
-    }
+    // if (headerSelfFixedDesktop) {
+    //   document.body.classList.add("header-fixed");
+    //   objectPath.push(this.classes, "header", "header-fixed");
+    // } else {
+    //   document.body.classList.add("header-static");
+    // }
 
     const headerSelfFixedMobile  = objectPath.get(this.config, "header.self.fixed.mobile");
     if (headerSelfFixedMobile) {
@@ -165,7 +165,7 @@ export class HtmlClassService {
   initSubheader() {
     const subheaderDisplay = objectPath.get(this.config, "subheader.display");
     if (subheaderDisplay) {
-      document.body.classList.add("subheader-enabled");
+      // document.body.classList.add("subheader-enabled");
     } else {
       return;
     }
