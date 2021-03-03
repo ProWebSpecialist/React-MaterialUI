@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { Redirect, Switch } from "react-router-dom";
 import { LayoutSplashScreen, ContentRoute } from "../_metronic/layout";
 import { DashboardPage } from "./pages/DashboardPage";
+import { AuthPage } from "./modules/Auth";
 
 export default function BasePage() {
   return (
@@ -12,7 +13,7 @@ export default function BasePage() {
           <Redirect exact from="/" to="/home" />
         }
         <ContentRoute path="/home" component={DashboardPage} />
-        <Redirect to="error/error-v1" />
+        <ContentRoute path="/auth/login" component={AuthPage} />
       </Switch>
     </Suspense>
   );

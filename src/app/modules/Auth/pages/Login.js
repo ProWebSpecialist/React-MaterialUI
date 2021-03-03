@@ -94,11 +94,8 @@ function Login(props) {
       {/* begin::Head */}
       <div className="text-center mb-10 mb-lg-20">
         <h3 className="font-size-h1">
-          <FormattedMessage id="AUTH.LOGIN.TITLE" />
+          Login
         </h3>
-        <p className="text-muted font-weight-bold">
-          Enter your username and password
-        </p>
       </div>
       {/* end::Head */}
 
@@ -107,7 +104,7 @@ function Login(props) {
         onSubmit={formik.handleSubmit}
         className="form fv-plugins-bootstrap fv-plugins-framework"
       >
-        {formik.status ? (
+        {/* {formik.status ? (
           <div className="mb-10 alert alert-custom alert-light-danger alert-dismissible">
             <div className="alert-text font-weight-bold">{formik.status}</div>
           </div>
@@ -118,7 +115,7 @@ function Login(props) {
               <strong>demo</strong> to continue.
             </div>
           </div>
-        )}
+        )} */}
 
         <div className="form-group fv-plugins-icon-container">
           <input
@@ -164,7 +161,7 @@ function Login(props) {
             id="kt_login_signin_submit"
             type="submit"
             disabled={formik.isSubmitting}
-            className={`btn btn-primary font-weight-bold px-9 py-4 my-3`}
+            className={`btn btn-primary font-weight-bold px-9 py-4 my-3 light-blue-bg border-none`}
           >
             <span>Sign In</span>
             {loading && <span className="ml-3 spinner spinner-white"></span>}

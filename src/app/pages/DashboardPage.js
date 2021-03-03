@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { shallowEqual, useSelector } from "react-redux";
 import {
   Card
 } from "react-bootstrap";
@@ -73,6 +74,14 @@ const items = [
 ];
 
 export function DashboardPage() {
+  const {isAuthorized, user} = useSelector(
+    ({auth}) => ({
+        isAuthorized: auth.user != null && auth.user.roles[0] == 1,
+        user: auth.user
+    }),
+    shallowEqual
+  );
+
   const [count, setCount] = useState(6);
 
   const itemList = items.map((i, index) => {
@@ -102,14 +111,27 @@ export function DashboardPage() {
         </Button>
       </div>
       <div className="button-container">
-        <Button
-          variant="contained"
-          size="small"
-          className="btn-black font-bold px-8 py-3 text-sm tc-white br-20"
-        >
-          Sign in
-          <FaSignInAlt className="icon-addon ml-4" />
-        </Button>
+        {
+          isAuthorized ? <a href="/">
+          <Button
+            variant="contained"
+            size="small"
+            className="btn-black font-bold px-8 py-3 text-sm tc-white br-20"
+          >
+            Dashboard
+            <FaSignInAlt className="icon-addon ml-4" />
+          </Button>
+        </a> : <a href="/auth/login">
+          <Button
+            variant="contained"
+            size="small"
+            className="btn-black font-bold px-8 py-3 text-sm tc-white br-20"
+          >
+            Sign in
+            <FaSignInAlt className="icon-addon ml-4" />
+          </Button>
+        </a>
+        }
       </div>
     </div>
     <div className="main-content">

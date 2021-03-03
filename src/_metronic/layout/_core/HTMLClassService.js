@@ -99,7 +99,7 @@ export class HtmlClassService {
   initLayout() {
     const selfBodyBackgroundImage = objectPath.get(this.config, "self.body.backgroundImage");
     if (selfBodyBackgroundImage) {
-      const backgroundImageUrl = `${toAbsoluteUrl("/media/bg/bg-dashboard.png")}`;
+      const backgroundImageUrl = `${toAbsoluteUrl("./media/bg/bg-dashboard.png")}`;
       document.body.style.backgroundImage = `url("${backgroundImageUrl}")`;
     }
 

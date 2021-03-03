@@ -6,32 +6,23 @@ import BasePage from "./BasePage";
 import AdminBasePage from "./AdminBasePage";
 import { Logout, AuthPage } from "./modules/Auth";
 import ErrorsPage from "./modules/ErrorsExamples/ErrorsPage";
-import { DashboardPage } from "./pages/Admin/DashboardPage";
 
 export function Routes() {
-    const {isAuthorized} = useSelector(
+    const {isAuthorized, user} = useSelector(
         ({auth}) => ({
-            isAuthorized: auth.user == null,
+            isAuthorized: auth.user != null && auth.user.roles[0] == 1,
+            user: auth.user
         }),
         shallowEqual
     );
 
-    console.log("isAuth:", isAuthorized)
-
     return (
         <Switch>
-            {!isAuthorized ? (
-                <BasePage/>
-            ) : (
-                <Redirect from="/auth" to="/admin"/>
-            )}
-
+            <BasePage />
+            
             <Layout>
-                <AdminBasePage />
+                <AdminBasePage/>
             </Layout>
-            <Route path="/admin" component={DashboardPage} />
-            <Route path="/error" component={ErrorsPage} />
-            <Route path="/logout" component={Logout}/>
         </Switch>
     );
 }
