@@ -36,24 +36,24 @@ export function HeaderMenu({ layoutProps }) {
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/services')}`}>
-                <NavLink className="menu-link" to="/shop/services">
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/services')}`}>
+                <NavLink className="menu-link" to="/services">
                     <span className="menu-text">Custom</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/premade')}`}>
-                <NavLink className="menu-link" to="/shop/premade">
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/premade')}`}>
+                <NavLink className="menu-link" to="/premade">
                     <span className="menu-text">Premade</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/addons')}`}>
-                <NavLink className="menu-link" to="/shop/addons">
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/addons')}`}>
+                <NavLink className="menu-link" to="/addons">
                     <span className="menu-text">Addons</span>
                     <span className="nav-addon">New</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
@@ -62,26 +62,31 @@ export function HeaderMenu({ layoutProps }) {
             {/*end::1 Level*/}
 
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/addons')}`}>
-                <NavLink className="menu-link" to="/auth/login">
-                    {!isAuthorized ? (
-                            /*Render auth page when user at `/auth` and not authorized.*/
-                            <button
+            <li className={`menu-item menu-item-rel`}>
+                {!isAuthorized ? (
+                        /*Render auth page when user at `/auth` and not authorized.*/
+                    <NavLink className="menu-link" to="/auth/login">
+                        <button
                             type="button"
                             className="btn btn-transparent-white font-weight-bold"
                         >
                             LOGIN
                         </button>    
-                    ) : (
-                            /*Otherwise redirect to root page (`/`)*/
-                        <Link
-                        to="/logout"
-                        className="btn btn-transparent-white font-weight-bold"
+                    </NavLink>   
+                ) : (
+                        /*Otherwise redirect to root page (`/`)*/
+                    <Link
+                    to="/logout"
+                    className="menu-link"
+                    >
+                        <button
+                            type="button"
+                            className="btn btn-transparent-white font-weight-bold"
                         >
-                        LOG OUT
-                        </Link>
-                    )} 
-                </NavLink>   
+                            LOGOUT
+                        </button>
+                    </Link>
+                )} 
             </li>
             {/*end::1 Level*/}
         </ul>

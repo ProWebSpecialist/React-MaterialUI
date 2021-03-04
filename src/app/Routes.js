@@ -23,7 +23,49 @@ export function Routes() {
 
     return (
         <Switch>
-            <Route path="/home" component={DashboardPage} /> 
+            {!isAuthorized ? (
+                /*Render auth page when user at `/auth` and not authorized.*/
+                <Route path="/auth/login">
+                    <AuthPage />
+                </Route>
+            ) : (
+                /*Otherwise redirect to root page (`/`)*/
+                <Redirect from="/auth" to="/admin"/>
+            )}
+
+            <Route path="/error" component={ErrorsPage}/>
+            <Route path="/logout" component={Logout}/>
+
+            <Switch>
+                <Route path="/services">
+                    <Layout>
+                        <ServicesPage />
+                    </Layout>
+                </Route>
+                <Route path="/premade">
+                    <Layout>
+                        <PremadePage />
+                    </Layout>
+                </Route>
+                <Route path="/addons">
+                    <Layout>
+                        <AddonsPage />
+                    </Layout>
+                </Route>
+                <Route path="/shop">
+                    <Layout>
+                        <ShopPage />
+                    </Layout>
+                </Route>
+                <Route path="/">
+                    <DashboardPage />
+                </Route>
+            </Switch>
+
+            {/* <ContentRoute path="/home" component={DashboardPage} /> 
+            <Route>
+                <AuthPage />
+            </Route>
             <Layout>
                 <Switch>
                     <ContentRoute path="/shop/services" component={ServicesPage} />
@@ -31,10 +73,9 @@ export function Routes() {
                     <ContentRoute path="/shop/addons" component={AddonsPage} />
                     <ContentRoute path="/shop" component={ShopPage} />
                 </Switch>
-            </Layout>
-            <Route>
-                <AuthPage />
-            </Route>
+            </Layout> */}
+
+
         </Switch>
     );
 }
