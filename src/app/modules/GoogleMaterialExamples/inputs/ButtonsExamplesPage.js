@@ -1567,7 +1567,7 @@ const BootstrapButton = withStyles({
     borderColor: '#007bff',
     fontFamily: [
       '-apple-system',
-      'BlinkMacSystemFont',
+      'BMacSystemFont',
       '"Segoe UI"',
       'Roboto',
       '"Helvetica Neue"',

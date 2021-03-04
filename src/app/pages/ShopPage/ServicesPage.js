@@ -1,28 +1,5 @@
 import React from "react";
-import { FaShoppingBasket, FaRegWindowMaximize, FaAlignCenter, FaGhost } from 'react-icons/fa';
-
-const customItems = [
-  {
-    faIcon: <FaShoppingBasket className="w-100 h-100" />,
-    itemName: 'Store Theme',
-    price: 100
-  },
-  {
-    faIcon: <FaRegWindowMaximize className="w-100 h-100" />,
-    itemName: 'Xenforo Theme',
-    price: 150
-  },
-  {
-    faIcon: <FaAlignCenter className="w-100 h-100" />,
-    itemName: 'Full Website',
-    price: 200
-  },
-  {
-    faIcon: <FaGhost className="w-100 h-100" />,
-    itemName: 'Ghost Theme',
-    price: 100
-  }
-];
+import { customItems } from "./__mockup__/shopMockup";
 
 export function ServicesPage() {
   const customItemList = customItems.map(i => {
@@ -39,7 +16,7 @@ export function ServicesPage() {
           </div>;
   });
 
-  return <div className="shop-container">
+  return <>
     <div className="custom-items mb-8">
       <div className="mb-8">
         <h1 className="text-dark font-bold title">Services</h1>
@@ -50,5 +27,5 @@ export function ServicesPage() {
         }
       </div>
     </div>
-  </div>;
+  </>;
 }

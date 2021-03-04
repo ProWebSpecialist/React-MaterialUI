@@ -28,7 +28,7 @@ export function HeaderMenu({ layoutProps }) {
         {/*begin::Header Nav*/}
         <ul className={`menu-nav ${layoutProps.ulClasses}`}>
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop')}`}>
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/all')}`}>
                 <NavLink className="menu-link" to="/shop">
                     <span className="menu-text">All</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
@@ -36,24 +36,24 @@ export function HeaderMenu({ layoutProps }) {
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/services')}`}>
-                <NavLink className="menu-link" to="/services">
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/services')}`}>
+                <NavLink className="menu-link" to="/shop/services">
                     <span className="menu-text">Custom</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/premade')}`}>
-                <NavLink className="menu-link" to="/premade">
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/premade')}`}>
+                <NavLink className="menu-link" to="/shop/premade">
                     <span className="menu-text">Premade</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}
                 </NavLink>
             </li>
             {/*end::1 Level*/}
             {/*begin::1 Level*/}
-            <li className={`menu-item menu-item-rel ${getMenuItemActive('/addons')}`}>
-                <NavLink className="menu-link" to="/addons">
+            <li className={`menu-item menu-item-rel ${getMenuItemActive('/shop/addons')}`}>
+                <NavLink className="menu-link" to="/shop/addons">
                     <span className="menu-text">Addons</span>
                     <span className="nav-addon">New</span>
                     {layoutProps.rootArrowEnabled && (<i className="menu-arrow" />)}

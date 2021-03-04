@@ -1,28 +1,5 @@
 import React from "react";
-import { FaShoppingBasket, FaRegWindowMaximize, FaAlignCenter, FaGhost } from 'react-icons/fa';
-
-const addedItems = [
-  {
-    imgUrl: "https://i.imgur.com/Nktz5tE.png",
-    itemName: "Cube Buycraft",
-    price: 50
-  },
-  {
-    imgUrl: "https://i.imgur.com/8dhfp55.png",
-    itemName: "Wiki Addon",
-    price: 50
-  },
-  {
-    imgUrl: "https://i.imgur.com/v5N92oe.png",
-    itemName: "Ghost Addon",
-    price: 50
-  },
-  {
-    imgUrl: "https://i.imgur.com/KUB4fAW.png",
-    itemName: "News Addon",
-    price: 50
-  }
-];
+import { addedItems } from "./__mockup__/shopMockup";
 
 export function PremadePage() {
   const addedItemsList = addedItems.map(a => {
@@ -39,7 +16,7 @@ export function PremadePage() {
           </div>;
   });
 
-  return <div className="shop-container">
+  return <>
     <div className="newly-added mt-16">
       <div>
         <h1 className="text-dark font-bold title">Premade Themes</h1>
@@ -50,5 +27,5 @@ export function PremadePage() {
         }
       </div>
     </div>
-  </div>;
+  </>;
 }

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { shallowEqual, useSelector } from "react-redux";
-import {
-  Card
-} from "react-bootstrap";
+import { Link } from "react-router-dom";
 import {
   Button
 } from "@material-ui/core";
@@ -101,7 +99,7 @@ export function DashboardPage() {
     <div id="bubMid"></div>
     <div className="header-container mt-12 mx-16">
       <div className="button-container">
-        <a href="/shop">
+        <Link to="/shop">
           <Button
             variant="contained"
             size="small"
@@ -110,11 +108,11 @@ export function DashboardPage() {
             <FaShoppingBasket className="icon-addon mr-4" />
             Shop
           </Button>
-        </a>
+        </Link>
       </div>
       <div className="button-container">
         {
-          isAuthorized ? <a href="/">
+          isAuthorized ? <Link to="/">
           <Button
             variant="contained"
             size="small"
@@ -123,7 +121,7 @@ export function DashboardPage() {
             Dashboard
             <FaSignInAlt className="icon-addon ml-4" />
           </Button>
-        </a> : <a href="/auth/login">
+        </Link> : <Link to="/auth/login">
           <Button
             variant="contained"
             size="small"
@@ -132,7 +130,7 @@ export function DashboardPage() {
             Sign in
             <FaSignInAlt className="icon-addon ml-4" />
           </Button>
-        </a>
+        </Link>
         }
       </div>
     </div>
