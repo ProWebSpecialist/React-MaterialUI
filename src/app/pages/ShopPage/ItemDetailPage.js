@@ -1,6 +1,7 @@
 import React from 'react';
 import { BiChevronsRight } from 'react-icons/bi';
 import { FaExclamationCircle } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 import { items } from "./__mockup__/shopMockup";
 import Carousel from 'react-material-ui-carousel'
 
@@ -8,7 +9,7 @@ export function ItemDetailPage(props) {
     let {id, category} = props;
     let item = items.filter(c => c.id == id && c.category == category);
     item = item[0];
-    let carouselItem = item.carouselItems;
+    let carouselItem = item.carouselItems || [];
     
     return <div className="item-detail">
         <h3 className="title my-4">{item.itemName}</h3>
@@ -46,13 +47,15 @@ export function ItemDetailPage(props) {
                         </div>
                     }
                     <div className="carousel-container">
-                        <Carousel navButtonsAlwaysInvisible = {true}>
-                            {
-                                carouselItem.map( (item, i) => <div className="card">
-                                    <img src={item.imageUrl} alt="preview1" />
-                                </div> )
-                            }
-                        </Carousel>
+                        {
+                            carouselItem.length !== 0 &&<Carousel navButtonsAlwaysInvisible = {true}>
+                                {
+                                    carouselItem.map( (item, i) => <div className="card">
+                                        <img src={item.imageUrl} alt="preview1" />
+                                    </div> )
+                                }
+                            </Carousel>
+                        }
                     </div>
                     {item.description}
 
@@ -78,21 +81,25 @@ export function ItemDetailPage(props) {
                 </div>
             </div>
         </div>
-        <div className="terms py-2 text-right">
-            By completing your purchase you agree to the <span className="light-blue-text">Terms of Service</span>.
-        </div>
-        <div className="order-btn text-right">
-            <button
-                type="button"
-                className="btn btn-transparent-white font-weight-bold px-12 py-4"
-            >
-                {
-                    category === "services" && "Order"
-                }
-                {
-                    (category === "premade" || category === "addons") && "Purchase"
-                }
-            </button>
+        {
+            category !== "services" && <div className="terms py-2 text-right">
+                By completing your purchase you agree to the <span className="light-blue-text"><Link to="/shop/termspolicy">Terms of Service</Link></span>.
+            </div>
+        }
+        <div className={`order-btn text-right ${category === "services" && "mt-4"}`}>
+            <Link to={category === "services" && `/shop/order/${id}`}>
+                <button
+                    type="button"
+                    className="btn btn-transparent-white font-weight-bold px-12 py-4"
+                >
+                    {
+                        category === "services" && "Order"
+                    }
+                    {
+                        (category === "premade" || category === "addons") && "Purchase"
+                    }
+                </button>
+            </Link>
         </div>
     </div>;
 }

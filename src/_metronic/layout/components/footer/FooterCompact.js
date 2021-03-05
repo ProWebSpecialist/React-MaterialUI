@@ -63,7 +63,7 @@ export function FooterCompact({
               <FaDiscord /> 
               </a>
             </div>
-            <div className="social-media-link">
+            {/* <div className="social-media-link">
               <a
                 href="https://skype.com"
                 rel="noopener noreferrer"
@@ -72,7 +72,7 @@ export function FooterCompact({
               >
               <FaSkype /> 
               </a>
-            </div>
+            </div> */}
           </div>
           {/* end::Nav */}
         </div>

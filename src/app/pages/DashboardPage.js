@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import copy from "clipboard-copy";
+import {Tooltip} from "@material-ui/core";
 import {
   Button
 } from "@material-ui/core";
@@ -82,6 +84,10 @@ export function DashboardPage() {
 
   const [count, setCount] = useState(6);
 
+  const copyCode = () => {
+    copy("AdaloDZN#7348").then(() => {});
+  };
+
   const itemList = items.map((i, index) => {
 
     return index < count && <div className="item" key={index}>
@@ -141,24 +147,17 @@ export function DashboardPage() {
       <div className="content-header">
         <div className="button-group">
           <div className="button-container">
-            <Button
-              variant="contained"
-              size="small"
-              className="light-blue-bg font-bold px-8 py-3 text-sm tc-white br-20"
-            >
-              <FaSkype className="icon-addon mr-4" />
-              AdaloDZN.designs
-            </Button>
-          </div>
-          <div className="button-container">
-            <Button
-              variant="contained"
-              size="small"
-              className="btn-black font-bold px-8 py-3 text-sm tc-white br-20"
-            >
-              <FaDiscord className="icon-addon mr-4" />
-              AdaloDZN#7348
-            </Button>
+            <Tooltip title="Copy ID!">
+              <Button
+                variant="contained"
+                size="small"
+                className="btn-black font-bold px-8 py-3 text-sm tc-white br-20"
+                onClick={copyCode}
+              >
+                <FaDiscord className="icon-addon mr-4" />
+                AdaloDZN#7348
+              </Button>
+            </Tooltip>
           </div>
         </div>
         <div className="header-text text-center">
@@ -173,14 +172,16 @@ export function DashboardPage() {
       </div>
       <div className="loadmore text-center mb-8">
         <div className="button-container">
-          <Button
-            variant="contained"
-            size="small"
-            className="btn-black font-bold px-8 py-3 text-sm tc-white br-20"
-            onClick={() => setCount(count + 6)}
-          >
-            Load More...
-          </Button>
+          {
+            itemList.length > count && <Button
+              variant="contained"
+              size="small"
+              className="btn-black font-bold px-8 py-3 text-sm tc-white br-20"
+              onClick={() => setCount(count + 6)}
+            >
+              Load More...
+            </Button>
+          }
         </div>
       </div>
     </div>

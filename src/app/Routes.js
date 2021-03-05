@@ -18,7 +18,7 @@ export function Routes() {
 
     return (
         <Switch>
-            {!isAuthorized ? (
+           {!isAuthorized ? (
                 /*Render auth page when user at `/auth` and not authorized.*/
                 <Route path="/auth">
                     <AuthPage />
