@@ -80,30 +80,30 @@ export function TermsPolicyPage() {
                 Indemnity upon breach: any provision or specified provisions (with definition); conditions upon first party indemnity; indemnity upon breach: any provision or specified provisions (with definition); conditions upon second party indemnity; limitations of liability vs indemnities.
                 </div>
             </div>
-            <div className="border-dotted">Limitations and exclusions of liability</div>
+            <div className="border-dotted"></div>
             <div className="py-8">
-                <h2 className="pb-2"></h2>
+                <h2 className="pb-2">Limitations and exclusions of liability</h2>
                 <div>
                 Caveats to limits of liability; interpretation of limits of liability; no liability for force majeure; no liability for loss of profits; no liability for loss of revenue; no liability for loss of use; no liability for loss of opportunities; no liability for loss of data; no liability for consequential loss; per event liability cap upon services contract; aggregate liability cap upon services contract.
                 </div>
             </div>
-            <div className="border-dotted">Force Majeure Event</div>
+            <div className="border-dotted"></div>
             <div className="py-8">
-                <h2 className="pb-2"></h2>
+                <h2 className="pb-2">Force Majeure Event</h2>
                 <div>
                 Obligations suspended for force majeure; force majeure notification and information; mitigation of effects of force majeure.
                 </div>
             </div>
-            <div className="border-dotted">Refund Policy</div>
+            <div className="border-dotted"></div>
             <div className="py-8">
-                <h2 className="pb-2"></h2>
+                <h2 className="pb-2">Refund Policy</h2>
                 <div>
                 Refunds are not allowed.
                 </div>
             </div>
-            <div className="border-dotted">Consensus</div>
+            <div className="border-dotted"></div>
             <div className="py-8">
-                <h2 className="pb-2"></h2>
+                <h2 className="pb-2">Consensus</h2>
                 <div>
                 Upon sending payment you agree to the Terms and Conditions above.
                 </div>

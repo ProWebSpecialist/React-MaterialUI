@@ -28,37 +28,31 @@ export function UserProfileDropdown() {
       >
         <div
           className={
-            "btn btn-icon btn-hover-transparent-white d-flex align-items-center btn-lg px-md-2 w-md-auto"
+            "btn btn-icon btn-hover-transparent-white d-flex align-items-center btn-lg px-md-2 w-md-auto light-blue-bg"
           }
         >
-          <span className="text-white opacity-70 font-weight-bold font-size-base d-none d-md-inline mr-1">
+          <span className="text-white font-weight-bold font-size-base d-none d-md-inline mr-1">
             Hi,
           </span>{" "}
           <span className="text-white opacity-90 font-weight-bolder font-size-base d-none d-md-inline mr-4">
             {user.firstname} {user.lastname}
           </span>
-          <span className="symbol symbol-35">
-            <span className="symbol-label text-white font-size-h5 font-weight-bold bg-white-o-30">
+          <span className="symbol symbol-35 bg-white">
+            <span className="symbol-label light-blue-text font-size-h5 font-weight-bold bg-white-o-30 ">
               {user.firstname[0]}
             </span>
           </span>
         </div>
       </Dropdown.Toggle>
-      <Dropdown.Menu className="p-0 m-0 dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+      <Dropdown.Menu className="p-0 m-0 mt-2 dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
         <>
           {/** ClassName should be 'dropdown-menu p-0 m-0 dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl' */}
           {layoutProps.light && (
             <>
-              <div className="d-flex align-items-center p-8 rounded-top">
-                <div className="symbol symbol-md bg-light-primary mr-3 flex-shrink-0">
-                  <img src={toAbsoluteUrl("/media/users/300_21.jpg")} alt="" />
-                </div>
+              <div className="d-flex align-items-center p-4 rounded-top">
                 <div className="text-dark m-0 flex-grow-1 mr-3 font-size-h5">
                   {user.firstname} {user.lastname}
                 </div>
-                <span className="label label-light-success label-lg font-weight-bold label-inline">
-                  3 messages
-                </span>
               </div>
               <div className="separator separator-solid"></div>
             </>
@@ -101,61 +95,35 @@ export function UserProfileDropdown() {
                 </div>
                 <div className="text-muted">
                   Account settings and more
-                  <span className="label label-light-danger label-inline font-weight-bold">
+                  {/* <span className="label label-light-danger label-inline font-weight-bold">
                     update
-                  </span>
+                  </span> */}
                 </div>
               </div>
             </div>
           </Link>
 
-          <a className="navi-item px-8">
+          <Link to="/dashboard/alert" className="navi-item px-8">
             <div className="navi-link">
               <div className="navi-icon mr-2">
-                <i className="flaticon2-mail text-warning"></i>
+                <i className="flaticon2-bell text-warning"></i>
               </div>
               <div className="navi-text">
-                <div className="font-weight-bold">My Messages</div>
-                <div className="text-muted">Inbox and tasks</div>
+                <div className="font-weight-bold">My Alerts</div>
+                <div className="text-muted">Message from admin</div>
               </div>
             </div>
-          </a>
+          </Link>
 
-          <a className="navi-item px-8">
-            <div className="navi-link">
-              <div className="navi-icon mr-2">
-                <i className="flaticon2-rocket-1 text-danger"></i>
-              </div>
-              <div className="navi-text">
-                <div className="font-weight-bold">My Activities</div>
-                <div className="text-muted">Logs and notifications</div>
-              </div>
-            </div>
-          </a>
-
-          <a className="navi-item px-8">
-            <div className="navi-link">
-              <div className="navi-icon mr-2">
-                <i className="flaticon2-hourglass text-primary"></i>
-              </div>
-              <div className="navi-text">
-                <div className="font-weight-bold">My Tasks</div>
-                <div className="text-muted">latest tasks and projects</div>
-              </div>
-            </div>
-          </a>
           <div className="navi-separator mt-3"></div>
 
-          <div className="navi-footer  px-8 py-5">
+          <div className="navi-footer  px-8 py-4">
             <Link
               to="/logout"
-              className="btn btn-light-primary font-weight-bold"
+              className="btn btn-light-primary font-weight-bold light-blue-bg text-white"
             >
               Sign Out
             </Link>
-            <a href="#" className="btn btn-clean font-weight-bold">
-              Upgrade Plan
-            </a>
           </div>
         </div>
       </Dropdown.Menu>

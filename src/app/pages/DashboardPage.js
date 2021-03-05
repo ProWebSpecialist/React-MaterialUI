@@ -4,11 +4,17 @@ import { Link } from "react-router-dom";
 import copy from "clipboard-copy";
 import {Tooltip} from "@material-ui/core";
 import {
-  Button
+  Button,
+  TextField,
+  InputAdornment
 } from "@material-ui/core";
-import { FaShoppingBasket, FaSkype, FaSignInAlt, FaDiscord, FaChevronUp } from 'react-icons/fa';
+import { FaShoppingBasket, FaSignInAlt, FaDiscord, FaChevronUp } from 'react-icons/fa';
+import { GoLocation,GoCalendar } from 'react-icons/go';
+import { FiUsers, FiBriefcase } from 'react-icons/fi';
+import { GiAirplaneArrival } from 'react-icons/gi';
 import logo from "../../_metronic/_assets/img/logo.png";
 import ScrollToTop from "react-scroll-to-top";
+
 
 const items = [
   {
@@ -83,6 +89,22 @@ export function DashboardPage() {
   );
 
   const [count, setCount] = useState(6);
+  const [from, setFrom] = useState("");
+  const [to, setTo] = useState("");
+  const [arrival, setArrival] = useState("");
+  const [departure, setDeparture] = useState("");
+  const [travelers, setTravelers] = useState("");
+  const [classname, setClassname] = useState("");
+
+  const handleChange = name => event => {
+    if(name == "from") {setFrom(event.target.value)}
+    if(name == "to") {setTo(event.target.value)}
+    if(name == "arrival") {setArrival(event.target.value)}
+    if(name == "departure") {setDeparture(event.target.value)}
+    if(name == "travelers") {setTravelers(event.target.value)}
+    if(name == "classname") {setClassname(event.target.value)}
+  }
+
 
   const copyCode = () => {
     copy("AdaloDZN#7348").then(() => {});
@@ -118,7 +140,7 @@ export function DashboardPage() {
       </div>
       <div className="button-container">
         {
-          isAuthorized ? <Link to="/">
+          isAuthorized ? <Link to="/dashboard">
           <Button
             variant="contained"
             size="small"
@@ -161,16 +183,121 @@ export function DashboardPage() {
           </div>
         </div>
         <div className="header-text text-center">
-          <div>LETS <span className="light-blue-text">CREATE</span></div>
-          <div>SOMETHING <span className="light-blue-text">AWESOME</span></div>
+          <div>READY TO <span className="light-blue-text">FLY?</span></div>
+          <div>SELECT DESTINATION <span className="light-blue-text">NOW</span></div>
         </div>
       </div>
       <div className="items-container">
-        {
+        {/* {
           itemList
-        }
+        } */}
+        <div className="booking-form w-100">
+          <TextField
+            id="outlined-adornment-amount"
+            className={"w-100 my-6"}
+            variant="outlined"
+            label="From"
+            value={from}
+            onChange={handleChange("from")}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <GoLocation />
+                </InputAdornment>
+              )
+            }}
+          />
+          <TextField
+            id="outlined-adornment-amount"
+            className={"w-100 my-6"}
+            variant="outlined"
+            label="To"
+            value={to}
+            onChange={handleChange("to")}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <GoLocation />
+                </InputAdornment>
+              )
+            }}
+          />
+          <TextField
+            id="outlined-adornment-amount"
+            className={"w-100 my-6"}
+            variant="outlined"
+            label="Arrival"
+            type={"date"}
+            value={arrival}
+            onChange={handleChange("arrival")}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <GoCalendar />
+                </InputAdornment>
+              )
+            }}
+          />
+          <TextField
+            id="outlined-adornment-amount"
+            className={"w-100 my-6"}
+            variant="outlined"
+            type={"date"}
+            label="Departure"
+            value={departure}
+            onChange={handleChange("departure")}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <GoCalendar />
+                </InputAdornment>
+              )
+            }}
+          />
+          <TextField
+            id="outlined-adornment-amount"
+            className={"w-100 my-6"}
+            variant="outlined"
+            label="Travlers"
+            value={travelers}
+            onChange={handleChange("travelers")}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <FiUsers />
+                </InputAdornment>
+              )
+            }}
+          /> 
+          <TextField
+            id="outlined-adornment-amount"
+            className={"w-100 my-6"}
+            variant="outlined"
+            label="Class"
+            value={classname}
+            onChange={handleChange("classname")}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <FiBriefcase />
+                </InputAdornment>
+              )
+            }}
+          />
+
+          <div>
+              <Button
+              variant="contained"
+              size="small"
+              className="light-blue-bg font-bold px-8 py-3 text-sm tc-white br-20"
+            >
+              <GiAirplaneArrival className="icon-addon mr-4" />
+              Search Flights
+            </Button>
+          </div>          
+        </div>
       </div>
-      <div className="loadmore text-center mb-8">
+      {/* <div className="loadmore text-center mb-8">
         <div className="button-container">
           {
             itemList.length > count && <Button
@@ -183,7 +310,7 @@ export function DashboardPage() {
             </Button>
           }
         </div>
-      </div>
+      </div> */}
     </div>
   </div>;
 }

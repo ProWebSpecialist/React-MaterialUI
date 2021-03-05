@@ -5,7 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 import SVG from "react-inlinesvg";
 import { toAbsoluteUrl, checkIsActive } from "../../../../_helpers";
 import { shallowEqual, useSelector } from "react-redux";
-
+import {UserProfileDropdown} from "../../extras/dropdowns/UserProfileDropdown";
 
 export function HeaderMenu({ layoutProps }) {
     const {isAuthorized} = useSelector(
@@ -75,17 +75,18 @@ export function HeaderMenu({ layoutProps }) {
                     </NavLink>   
                 ) : (
                         /*Otherwise redirect to root page (`/`)*/
-                    <Link
-                    to="/logout"
-                    className="menu-link"
-                    >
-                        <button
-                            type="button"
-                            className="btn btn-transparent-white font-weight-bold"
-                        >
-                            LOGOUT
-                        </button>
-                    </Link>
+                    <UserProfileDropdown />
+                    // <Link
+                    // to="/logout"
+                    // className="menu-link"
+                    // >
+                    //     <button
+                    //         type="button"
+                    //         className="btn btn-transparent-white font-weight-bold"
+                    //     >
+                    //         LOGOUT
+                    //     </button>
+                    // </Link>
                 )} 
             </li>
             {/*end::1 Level*/}

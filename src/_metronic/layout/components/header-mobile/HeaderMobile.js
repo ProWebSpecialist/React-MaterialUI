@@ -31,7 +31,7 @@ export function HeaderMobile() {
         <Link to="/">
           <img
             alt="Logo"
-            className="logo-default max-h-30px"
+            className="logo-default max-h-50px"
             src={toAbsoluteUrl("/media/logos/header-logo.png")}
           />
         </Link>

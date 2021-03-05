@@ -6,6 +6,7 @@ import { Logout, AuthPage } from "./modules/Auth";
 import ErrorsPage from "./modules/ErrorsExamples/ErrorsPage";
 import {DashboardPage} from "./pages/DashboardPage";
 import { BaseShopPage } from "./pages/ShopPage/BaseShopPage";
+import { UserDashboardPage } from "./pages/UserDashboardPage";
 
 export function Routes() {
     const {isAuthorized, user} = useSelector(
@@ -18,15 +19,21 @@ export function Routes() {
 
     return (
         <Switch>
-           {!isAuthorized ? (
+            {!isAuthorized ? (
                 /*Render auth page when user at `/auth` and not authorized.*/
                 <Route path="/auth">
                     <AuthPage />
                 </Route>
             ) : (
                 /*Otherwise redirect to root page (`/`)*/
-                <Redirect from="/auth" to="/admin"/>
+                <Redirect from="/auth" to="/dashboard"/>
             )}
+
+            {isAuthorized && <Route path="/dashboard">
+                <Layout>
+                    <UserDashboardPage />
+                </Layout>
+            </Route> }
 
             <Route path="/shop">
                 <Layout>
