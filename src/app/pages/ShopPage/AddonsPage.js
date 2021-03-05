@@ -1,9 +1,13 @@
 import React from "react";
-import { addedItems } from "./__mockup__/shopMockup";
+import { Link, useParams } from "react-router-dom";
+import { items } from "./__mockup__/shopMockup";
+import { ItemDetailPage } from "./ItemDetailPage";
 
 export function AddonsPage() {
-  const addedItemsList = addedItems.map(a => {
-    return <div className="item">
+  let { id } = useParams();
+
+  const addedItemsList = items.map(a => {
+    return a.category == "addons" && <Link to={`/shop/${a.category}/${a.id}`} className="item" key={a.id}>
             <div className="item-added-wrapper text-center d-flex justify-content-center align-items-center">
               <div className="item-added">
                 <img src={a.imgUrl} />
@@ -13,7 +17,7 @@ export function AddonsPage() {
               <h6 className="text-dark font-bold mt-6">{a.itemName}</h6>
               <div className="item-sub-desc">Price$<span className="light-green-text">{a.price}</span></div>
             </div>
-          </div>;
+          </Link>;
   });
 
   return <>
@@ -21,11 +25,9 @@ export function AddonsPage() {
       <div>
         <h1 className="text-dark font-bold title">Xenforo2 Addons</h1>
       </div>
-      <div className="items">
-        {
-          addedItemsList
-        }
-      </div>
+      {
+        id == undefined ? <div className="items">{addedItemsList}</div> : <ItemDetailPage id={id} category="addons" />
+      }
     </div>
   </>;
 }

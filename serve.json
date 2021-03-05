@@ -2,8 +2,8 @@
   "public": "_site",
   "redirects": [
     {
-      "source": "/benj",
-      "destination": "/benj"
+      "source": "/",
+      "destination": "/"
     }
   ],
   "rewrites": [

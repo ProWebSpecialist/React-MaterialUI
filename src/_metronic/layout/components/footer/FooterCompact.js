@@ -45,7 +45,7 @@ export function FooterCompact({
           <div className="text-dark d-flex align-items-center justify-content-end social-medias">
             <div className="social-media-link">
               <a
-                href="twitter.com"
+                href="https://twitter.com"
                 rel="noopener noreferrer"
                 target="_blank"
                 className="text-dark-75 text-hover-primary"
@@ -55,7 +55,7 @@ export function FooterCompact({
             </div>
             <div className="social-media-link">
               <a
-                href="discord.com"
+                href="https://discord.com"
                 rel="noopener noreferrer"
                 target="_blank"
                 className="text-dark-75 text-hover-primary"
@@ -65,7 +65,7 @@ export function FooterCompact({
             </div>
             <div className="social-media-link">
               <a
-                href="skype.com"
+                href="https://skype.com"
                 rel="noopener noreferrer"
                 target="_blank"
                 className="text-dark-75 text-hover-primary"

@@ -147,7 +147,7 @@ export function DashboardPage() {
               className="light-blue-bg font-bold px-8 py-3 text-sm tc-white br-20"
             >
               <FaSkype className="icon-addon mr-4" />
-              Benj.designs
+              AdaloDZN.designs
             </Button>
           </div>
           <div className="button-container">
@@ -157,7 +157,7 @@ export function DashboardPage() {
               className="btn-black font-bold px-8 py-3 text-sm tc-white br-20"
             >
               <FaDiscord className="icon-addon mr-4" />
-              Benj#1049
+              AdaloDZN#7348
             </Button>
           </div>
         </div>

@@ -14,9 +14,9 @@ export function BaseShopPage() {
         from="/shop"
         to="/shop/all"
       />
-      <ContentRoute path="/shop/services" component={ServicesPage} />
-      <ContentRoute path="/shop/premade" component={PremadePage} />
-      <ContentRoute path="/shop/addons" component={AddonsPage} />
+      <ContentRoute path="/shop/services/:id?" component={ServicesPage} />
+      <ContentRoute path="/shop/premade/:id?" component={PremadePage} />
+      <ContentRoute path="/shop/addons/:id?" component={AddonsPage} />
       <ContentRoute path="/shop/all" component={ShopPage} />
     </Switch>
   </div>;

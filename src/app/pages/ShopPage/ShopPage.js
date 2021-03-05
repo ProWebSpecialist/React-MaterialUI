@@ -1,9 +1,10 @@
 import React from "react";
-import {customItems, addedItems} from "./__mockup__/shopMockup";
+import { Link } from "react-router-dom";
+import {customItems, addedItems, items} from "./__mockup__/shopMockup";
 
 export function ShopPage() {
-  const customItemList = customItems.map(i => {
-    return <a className="item">
+  const customItemList = items.map(i => {
+    return i.category == "services" && <Link to={`/shop/${i.category}/${i.id}`} className="item" key={i.id}>
             <div className="item-custom-wrapper text-center d-flex justify-content-center align-items-center">
               <div className="item-custom">
                 {i.faIcon}
@@ -13,21 +14,21 @@ export function ShopPage() {
               <h6 className="text-dark font-bold mt-6">{i.itemName}</h6>
               <div className="item-sub-desc">Starting At $<span className="light-green-text">{i.price}</span></div>
             </div>
-          </a>;
+          </Link>;
   });
 
-  const addedItemsList = addedItems.map(a => {
-    return <a href="`/shop/addon/${}`" className="item">
+  const addedItemsList = items.map(i => {
+    return (i.category == "addons" || i.category == "premade") && <Link to={`/shop/${i.category}/${i.id}`} className="item" key={i.id}>
             <div className="item-added-wrapper text-center d-flex justify-content-center align-items-center">
               <div className="item-added">
-                <img src={a.imgUrl} />
+                <img src={i.imgUrl} />
               </div>
             </div>
             <div className="item-footer text-center">
-              <h6 className="text-dark font-bold mt-6">{a.itemName}</h6>
-              <div className="item-sub-desc">Price$<span className="light-green-text">{a.price}</span></div>
+              <h6 className="text-dark font-bold mt-6">{i.itemName}</h6>
+              <div className="item-sub-desc">Price$<span className="light-green-text">{i.price}</span></div>
             </div>
-          </a>;
+          </Link>;
   });
 
   return <>
