@@ -1,9 +1,8 @@
 /* eslint-disable no-script-url,jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useLocation } from "react-router";
-import { NavLink, Link } from "react-router-dom";
-import SVG from "react-inlinesvg";
-import { toAbsoluteUrl, checkIsActive } from "../../../../_helpers";
+import { NavLink } from "react-router-dom";
+import { checkIsActive } from "../../../../_helpers";
 import { shallowEqual, useSelector } from "react-redux";
 import {UserProfileDropdown} from "../../extras/dropdowns/UserProfileDropdown";
 

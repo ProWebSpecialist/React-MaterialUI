@@ -7,10 +7,10 @@ export function AddonsPage() {
   let { id } = useParams();
 
   const addedItemsList = items.map(a => {
-    return a.category == "addons" && <Link to={`/shop/${a.category}/${a.id}`} className="item" key={a.id}>
+    return a.category === "addons" && <Link to={`/shop/${a.category}/${a.id}`} className="item" key={a.id}>
             <div className="item-added-wrapper text-center d-flex justify-content-center align-items-center">
               <div className="item-added">
-                <img src={a.imgUrl} />
+                <img src={a.imgUrl} alt="item imageUrl" />
               </div>
             </div>
             <div className="item-footer text-center">
@@ -26,7 +26,7 @@ export function AddonsPage() {
         <h1 className="text-dark font-bold title">Xenforo2 Addons</h1>
       </div>
       {
-        id == undefined ? <div className="items">{addedItemsList}</div> : <ItemDetailPage id={id} category="addons" />
+        id === undefined ? <div className="items">{addedItemsList}</div> : <ItemDetailPage id={id} category="addons" />
       }
     </div>
   </>;

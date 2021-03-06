@@ -1,7 +1,11 @@
 import React from "react";
-import {FaTwitter, FaDiscord, FaSkype} from "react-icons/fa"; 
+import {
+  FaTwitter, 
+  FaDiscord, 
+  // FaSkype
+} from "react-icons/fa"; 
 export function FooterCompact({
-  today,
+  // today,
   footerClasses,
   footerContainerClasses,
 }) {
@@ -31,7 +35,7 @@ export function FooterCompact({
             </span>
             {` `}
             <a
-              href="#"
+              href="/#"
               rel="noopener noreferrer"
               target="_blank"
               className="text-dark-75 text-hover-primary"

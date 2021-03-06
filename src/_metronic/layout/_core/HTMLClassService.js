@@ -125,7 +125,7 @@ export class HtmlClassService {
    */
   initHeader() {
     // Fixed header
-    const headerSelfFixedDesktop = objectPath.get(this.config, "header.self.fixed.desktop");
+    // const headerSelfFixedDesktop = objectPath.get(this.config, "header.self.fixed.desktop");
     // if (headerSelfFixedDesktop) {
     //   document.body.classList.add("header-fixed");
     //   objectPath.push(this.classes, "header", "header-fixed");

@@ -13,11 +13,11 @@ export function UserDashboardPage() {
     const [password, setPassword] = useState("");
 
     const handleChange = name => event => {
-        if(name == "username") {setUsername(event.target.value)}
-        if(name == "email") {setEmail(event.target.value)}
-        if(name == "discord") {setDiscord(event.target.value)}
-        if(name == "avatar") {setAvatar(event.target.value)}
-        if(name == "password") {setPassword(event.target.value)}
+        if(name === "username") {setUsername(event.target.value)}
+        if(name === "email") {setEmail(event.target.value)}
+        if(name === "discord") {setDiscord(event.target.value)}
+        if(name === "avatar") {setAvatar(event.target.value)}
+        if(name === "password") {setPassword(event.target.value)}
     }
 
     return <div className="userdash-container">
@@ -25,7 +25,7 @@ export function UserDashboardPage() {
             <h1 className="font-bold my-8">Your Account</h1>
 
             <div className="card light-green-bg p-8 d-flex flex-row text-white">
-                <FaExclamationTriangle className="mt-1 mr-4" /><span> Please verify your email address to access the dashboard. <a className="text-underline">Resend Email</a></span>
+                <FaExclamationTriangle className="mt-1 mr-4" /><span> Please verify your email address to access the dashboard. <a className="text-underline" href="/#">Resend Email</a></span>
             </div>
 
             
@@ -41,7 +41,7 @@ export function UserDashboardPage() {
                         </div>
                     </div>
                     <div className="text-center p-4">
-                        <a>
+                        <a href="/#">
                             <FaRegEnvelopeOpen /> SUBSCRIBE TO EMAILS
                         </a>
                     </div>

@@ -7,7 +7,7 @@ import Carousel from 'react-material-ui-carousel'
 
 export function ItemDetailPage(props) {
     let {id, category} = props;
-    let item = items.filter(c => c.id == id && c.category == category);
+    let item = items.filter(c => c.id === id && c.category === category);
     item = item[0];
     let carouselItem = item.carouselItems || [];
     
@@ -25,7 +25,7 @@ export function ItemDetailPage(props) {
                 <div className="card-footer d-flex justify-content-between px-12 py-6">
                     <div>
                         {
-                            category == "services" ? "ETA" : "Delivery Time"
+                            category === "services" ? "ETA" : "Delivery Time"
                         }
                     </div>
                     <div className="text-dark font-bold">{category === "services" ? item.eta : item.deliveryTime}</div>
@@ -62,11 +62,11 @@ export function ItemDetailPage(props) {
                     <div className="included-container">
                         <div className="text-dark font-bold my-6">
                             {
-                                item.included.length != 0 && "Whats Included"
+                                item.included.length !== 0 && "Whats Included"
                             }
                         </div>
                             {
-                                item.included.length != 0 && item.included.map(i => {
+                                item.included.length !== 0 && item.included.map(i => {
                                     return <div className="include px-4 py-6 d-flex justify-content-start mb-4" key={i.id}>
                                                 <div className="mr-2">
                                                     <BiChevronsRight />

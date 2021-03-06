@@ -16,79 +16,79 @@ import logo from "../../_metronic/_assets/img/logo.png";
 import ScrollToTop from "react-scroll-to-top";
 
 
-const items = [
-  {
-    imgUrl: "https://i.imgur.com/M12Cg2n.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/neGD2Hj.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/0uJd5zb.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/tyePGMB.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/M12Cg2n.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/neGD2Hj.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/0uJd5zb.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/tyePGMB.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/M12Cg2n.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/neGD2Hj.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/0uJd5zb.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  },
-  {
-    imgUrl: "https://i.imgur.com/tyePGMB.png",
-    bigMessage: "SkyBounds",
-    smallMessage: "Full Website"
-  }
-];
+// const items = [
+//   {
+//     imgUrl: "https://i.imgur.com/M12Cg2n.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/neGD2Hj.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/0uJd5zb.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/tyePGMB.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/M12Cg2n.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/neGD2Hj.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/0uJd5zb.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/tyePGMB.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/M12Cg2n.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/neGD2Hj.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/0uJd5zb.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   },
+//   {
+//     imgUrl: "https://i.imgur.com/tyePGMB.png",
+//     bigMessage: "SkyBounds",
+//     smallMessage: "Full Website"
+//   }
+// ];
 
 export function DashboardPage() {
-  const {isAuthorized, user} = useSelector(
+  const {isAuthorized} = useSelector(
     ({auth}) => ({
-        isAuthorized: auth.user != null && auth.user.roles[0] == 1,
+        isAuthorized: auth.user != null && auth.user.roles[0] === 1,
         user: auth.user
     }),
     shallowEqual
   );
 
-  const [count, setCount] = useState(6);
+  // const [count, setCount] = useState(6);
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [arrival, setArrival] = useState("");
@@ -97,12 +97,12 @@ export function DashboardPage() {
   const [classname, setClassname] = useState("");
 
   const handleChange = name => event => {
-    if(name == "from") {setFrom(event.target.value)}
-    if(name == "to") {setTo(event.target.value)}
-    if(name == "arrival") {setArrival(event.target.value)}
-    if(name == "departure") {setDeparture(event.target.value)}
-    if(name == "travelers") {setTravelers(event.target.value)}
-    if(name == "classname") {setClassname(event.target.value)}
+    if(name === "from") {setFrom(event.target.value)}
+    if(name === "to") {setTo(event.target.value)}
+    if(name === "arrival") {setArrival(event.target.value)}
+    if(name === "departure") {setDeparture(event.target.value)}
+    if(name === "travelers") {setTravelers(event.target.value)}
+    if(name === "classname") {setClassname(event.target.value)}
   }
 
 
@@ -110,16 +110,16 @@ export function DashboardPage() {
     copy("AdaloDZN#7348").then(() => {});
   };
 
-  const itemList = items.map((i, index) => {
+  // const itemList = items.map((i, index) => {
 
-    return index < count && <div className="item" key={index}>
-            <img src={i.imgUrl} />
-            <a href="https://skybounds.com/" className="hover-message text-center">
-              <div className="big-message">{i.bigMessage}</div>
-              <div className="light-blue-text small-message">{i.smallMessage}</div>
-            </a>
-          </div>;
-  });
+  //   return index < count && <div className="item" key={index}>
+  //           <img src={i.imgUrl} />
+  //           <a href="https://skybounds.com/" className="hover-message text-center">
+  //             <div className="big-message">{i.bigMessage}</div>
+  //             <div className="light-blue-text small-message">{i.smallMessage}</div>
+  //           </a>
+  //         </div>;
+  // });
 
   return <div className="homepage-container">
     <ScrollToTop smooth className="scrollup" component={<FaChevronUp />} />

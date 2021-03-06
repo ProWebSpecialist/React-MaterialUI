@@ -14,13 +14,13 @@ export function OrderPage() {
     const [description, setDescription] = useState("");
 
     let { id } = useParams();
-    let item = items.filter(c => c.id == id && c.category == "services");
+    let item = items.filter(c => c.id === id && c.category === "services");
     item = item[0];
 
     const handleChange2 = name => event => {
-        if(name == "name") setName(event.target.value);
-        if(name == "budget") setBudget(event.target.value);
-        if(name == "deadline") setDeadline(event.target.value);
+        if(name === "name") setName(event.target.value);
+        if(name === "budget") setBudget(event.target.value);
+        if(name === "deadline") setDeadline(event.target.value);
     };
 
     const onChange = evt => {

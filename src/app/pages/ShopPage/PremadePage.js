@@ -7,10 +7,10 @@ export function PremadePage() {
   let { id } = useParams();
 
   const addedItemsList = items.map(a => {
-    return a.category == "premade" && <Link to={`/shop/${a.category}/${a.id}`} className="item" key={a.id}>
+    return a.category === "premade" && <Link to={`/shop/${a.category}/${a.id}`} className="item" key={a.id}>
             <div className="item-added-wrapper text-center d-flex justify-content-center align-items-center">
               <div className="item-added">
-                <img src={a.imgUrl} />
+                <img src={a.imgUrl} alt="item imageurl" />
               </div>
             </div>
             <div className="item-footer text-center">
@@ -26,7 +26,7 @@ export function PremadePage() {
         <h1 className="text-dark font-bold title">Premade Themes</h1>
       </div>
       {
-        id == undefined ? <div className="items">{addedItemsList}</div> : <ItemDetailPage id={id} category="premade" />
+        id === undefined ? <div className="items">{addedItemsList}</div> : <ItemDetailPage id={id} category="premade" />
       }
     </div>
   </>;

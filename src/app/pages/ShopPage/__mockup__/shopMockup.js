@@ -1,5 +1,10 @@
 import React from "react";
-import { FaShoppingBasket, FaRegWindowMaximize, FaAlignCenter, FaGhost } from 'react-icons/fa';
+import { 
+  FaShoppingBasket, 
+  FaRegWindowMaximize, 
+  FaAlignCenter, 
+  // FaGhost 
+} from 'react-icons/fa';
 import preview1 from "../../../../_metronic/_assets/img/preview1.png";
 import preview2 from "../../../../_metronic/_assets/img/preview2.png";
 import preview3 from "../../../../_metronic/_assets/img/preview3.png";
@@ -110,7 +115,6 @@ export const items = [
     price: 50,
     category: "premade",
     description: "Bring your Ghost Platform to the next level with a custom tailored website to fit your needs. If you plan on having a presence on the internet a high quality website is a must. Give your community the seamless, modern and high quality design the deserve.",
-    description: "Bring your Ghost Platform to the next level with a custom tailored website to fit your needs. If you plan on having a presence on the internet a high quality website is a must. Give your community the seamless, modern and high quality design the deserve.",
     included: [
       {
         id: 1,
@@ -159,7 +163,6 @@ export const items = [
     itemName: "Wiki Addon",
     price: 50,
     category: "addons",
-    description: "Bring your Ghost Platform to the next level with a custom tailored website to fit your needs. If you plan on having a presence on the internet a high quality website is a must. Give your community the seamless, modern and high quality design the deserve.",
     description: "Bring your Ghost Platform to the next level with a custom tailored website to fit your needs. If you plan on having a presence on the internet a high quality website is a must. Give your community the seamless, modern and high quality design the deserve.",
     included: [
       {
